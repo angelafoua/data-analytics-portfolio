@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Analytics Portfolio</title>
+  <meta name="description" content="End-to-end analytics projects: sales performance, customer retention, and operations & data quality.">
+  <style>
+    :root {
+      --blue:   #2E5BFF;
+      --blue-2: #33C2FF;
+      --green:  #00C48C;
+      --amber:  #FFB822;
+      --red:    #F7685B;
+      --purple: #8C54FF;
+      --ink:    #1a2233;
+      --ink-2:  #4a5568;
+      --muted:  #6b7280;
+      --bg:     #f7f9fc;
+      --card:   #ffffff;
+      --border: #e5e9f2;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1f3aab 0%, #2E5BFF 50%, #33C2FF 100%);
+      color: white;
+      padding: 72px 24px 88px;
+    }
+    .hero-inner { max-width: 1080px; margin: 0 auto; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      opacity: 0.85;
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 720px;
+      opacity: 0.95;
+      margin: 0 0 24px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: transform .08s ease, box-shadow .08s ease;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn-primary { background: white; color: var(--blue); }
+    .btn-primary:hover { box-shadow: 0 4px 16px rgba(0,0,0,.18); }
+    .btn-ghost {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,.5);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); }
+
+    /* Layout */
+    main { max-width: 1080px; margin: -56px auto 0; padding: 0 24px 64px; }
+    section { margin: 56px 0; }
+    h2 {
+      font-size: 22px;
+      margin: 0 0 18px;
+      letter-spacing: -0.01em;
+    }
+    p.section-lead { color: var(--ink-2); margin: 0 0 24px; }
+
+    /* Skills */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .skill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .skill h4 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .skill p { margin: 0; color: var(--ink-2); font-size: 14px; }
+
+    /* Project cards */
+    .project {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.03);
+      transition: box-shadow .15s ease, transform .15s ease;
+    }
+    .project:hover {
+      box-shadow: 0 12px 28px rgba(46, 91, 255, .12);
+      transform: translateY(-1px);
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 0;
+    }
+    .project-media {
+      background: #f0f3fa;
+      display: block;
+      overflow: hidden;
+    }
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .project-media:hover img { transform: scale(1.02); }
+    .project-body { padding: 26px 28px; }
+    .project-tag {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .tag-1 { background: rgba(46,91,255,.10);  color: var(--blue); }
+    .tag-2 { background: rgba(0,196,140,.12);  color: var(--green); }
+    .tag-3 { background: rgba(255,184,34,.16); color: #b97c00; }
+    .project h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    .project p { margin: 0 0 14px; color: var(--ink-2); }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      margin: 12px 0 18px;
+      padding: 12px 14px;
+      background: #fafbfd;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .stat .num {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--ink);
+      display: block;
+    }
+    .stat .lbl {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .link {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 12px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      color: var(--ink);
+      background: white;
+    }
+    .link.primary { background: var(--blue); color: white; border-color: var(--blue); }
+    .link.primary:hover { background: #234bd1; text-decoration: none; }
+    .link:hover { text-decoration: none; border-color: var(--blue); color: var(--blue); }
+    .link.primary:hover { color: white; }
+
+    /* Tools row */
+    .tools {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--ink-2);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    footer a { color: var(--ink-2); }
+
+    @media (max-width: 760px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .project-media { aspect-ratio: 16 / 10; }
+      .hero { padding: 48px 20px 64px; }
+      main { margin-top: -40px; padding: 0 16px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Data Analytics Portfolio</div>
+      <h1>From raw data to executive decisions.</h1>
+      <p>Three end-to-end analytics projects covering sales performance, customer retention, and operations &amp; data quality — each shipped with the SQL schema, the analysis notebook, an interactive dashboard, and a written executive report.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View projects</a>
+        <a class="btn btn-ghost" href="https://github.com/angelafoua/data-analytics-portfolio" target="_blank" rel="noopener">GitHub repository</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>What this portfolio demonstrates</h2>
+      <p class="section-lead">The full job of a Data / BI Analyst — model the data, define the right KPIs, build a dashboard the business can use, write up insights and recommendations leadership can act on.</p>
+      <div class="skills">
+        <div class="skill">
+          <h4>SQL</h4>
+          <p>Star-schema modeling, window functions, cohort analysis, rolling aggregations, data-quality rules.</p>
+        </div>
+        <div class="skill">
+          <h4>Python</h4>
+          <p>pandas + numpy for cleaning and analysis, reproducible Jupyter notebooks, synthetic data generation.</p>
+        </div>
+        <div class="skill">
+          <h4>Visualisation</h4>
+          <p>Plotly dashboards: KPI cards, cohort heatmaps, funnels, gauges. Power BI / Tableau-style executive layouts.</p>
+        </div>
+        <div class="skill">
+          <h4>Analytical thinking</h4>
+          <p>KPI design, RFM segmentation, retention curves, bottleneck attribution, Pareto and YoY analysis.</p>
+        </div>
+        <div class="skill">
+          <h4>Storytelling</h4>
+          <p>Executive-ready reports with headline numbers, key findings, and dollar-sized recommendations.</p>
+        </div>
+        <div class="skill">
+          <h4>Engineering hygiene</h4>
+          <p>Versioned scripts, deterministic seeds, documented schemas and cleaning pipelines, single-command rebuild.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tools used</h2>
+      <div class="tools">
+        <span class="chip">Python</span>
+        <span class="chip">pandas</span>
+        <span class="chip">numpy</span>
+        <span class="chip">SQL (PostgreSQL)</span>
+        <span class="chip">Plotly</span>
+        <span class="chip">Jupyter</span>
+        <span class="chip">Markdown</span>
+        <span class="chip">Git / GitHub</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <!-- Project 1 -->
+      <article class="project">
+        <div class="project-grid">
+          <a class="project-media" href="project_1_sales_analysis/dashboard/sales_dashboard.html">
+            <img src="assets/dashboard_screenshots/project_1_sales_dashboard.png" alt="Sales performance dashboard preview">
+          </a>
+          <div class="project-body">
+            <span class="project-tag tag-1">Project 1 · Sales</span>
+            <h3>Sales Performance Analytics</h3>
+            <p>Two years of multi-channel e-commerce orders. Builds the executive sales view: revenue trends, category &amp; product performance, regional breakdown, top-customer concentration, and a session→purchase funnel by channel.</p>
+            <div class="stats">
+              <div class="stat"><span class="num">$132M</span><span class="lbl">Net revenue</span></div>
+              <div class="stat"><span class="num">26k</span><span class="lbl">Orders</span></div>
+              <div class="stat"><span class="num">80k</span><span class="lbl">Order lines</span></div>
+              <div class="stat"><span class="num">45%</span><span class="lbl">Gross margin</span></div>
+            </div>
+            <div class="links">
+              <a class="link primary" href="project_1_sales_analysis/dashboard/sales_dashboard.html">Open dashboard</a>
+              <a class="link" href="project_1_sales_analysis/report.md">Read report</a>
+              <a class="link" href="project_1_sales_analysis/sql/">SQL</a>
+              <a class="link" href="project_1_sales_analysis/notebooks/01_sales_analysis.ipynb">Notebook</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project">
+        <div class="project-grid">
+          <a class="project-media" href="project_2_customer_analytics/dashboard/customer_dashboard.html">
+            <img src="assets/dashboard_screenshots/project_2_customer_dashboard.png" alt="Customer retention dashboard preview">
+          </a>
+          <div class="project-body">
+            <span class="project-tag tag-2">Project 2 · Retention</span>
+            <h3>Customer Behavior &amp; Retention</h3>
+            <p>Three years of subscription transactions. Builds the retention view that growth and customer-success teams use: cohort retention heatmap, monthly churn, LTV by acquisition channel and plan, and an RFM-lite segmentation.</p>
+            <div class="stats">
+              <div class="stat"><span class="num">5,579</span><span class="lbl">Customers</span></div>
+              <div class="stat"><span class="num">48k</span><span class="lbl">Billing events</span></div>
+              <div class="stat"><span class="num">$967</span><span class="lbl">Avg LTV</span></div>
+              <div class="stat"><span class="num">6.7%</span><span class="lbl">Monthly churn</span></div>
+            </div>
+            <div class="links">
+              <a class="link primary" href="project_2_customer_analytics/dashboard/customer_dashboard.html">Open dashboard</a>
+              <a class="link" href="project_2_customer_analytics/report.md">Read report</a>
+              <a class="link" href="project_2_customer_analytics/sql/">SQL</a>
+              <a class="link" href="project_2_customer_analytics/notebooks/01_retention_analysis.ipynb">Notebook</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project">
+        <div class="project-grid">
+          <a class="project-media" href="project_3_operations_analytics/dashboard/operations_dashboard.html">
+            <img src="assets/dashboard_screenshots/project_3_operations_dashboard.png" alt="Operations and data-quality dashboard preview">
+          </a>
+          <div class="project-body">
+            <span class="project-tag tag-3">Project 3 · Operations &amp; DQ</span>
+            <h3>Operations Efficiency &amp; Data Quality</h3>
+            <p>A year of fulfillment data against a 7-day SLA, paired with a deliberately messy upstream feed. Diagnoses where the SLA is breaking, attributes bottlenecks to processing vs. transit, and stands up a 7-rule data-quality scorecard.</p>
+            <div class="stats">
+              <div class="stat"><span class="num">30k</span><span class="lbl">Shipments</span></div>
+              <div class="stat"><span class="num">85.6%</span><span class="lbl">On-time %</span></div>
+              <div class="stat"><span class="num">5.0d</span><span class="lbl">Avg lead time</span></div>
+              <div class="stat"><span class="num">91.5%</span><span class="lbl">DQ score</span></div>
+            </div>
+            <div class="links">
+              <a class="link primary" href="project_3_operations_analytics/dashboard/operations_dashboard.html">Open dashboard</a>
+              <a class="link" href="project_3_operations_analytics/report.md">Read report</a>
+              <a class="link" href="project_3_operations_analytics/sql/">SQL</a>
+              <a class="link" href="project_3_operations_analytics/notebooks/01_operations_and_dq.ipynb">Notebook</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <h2>About the data</h2>
+      <p class="section-lead">Every dataset is synthetic — generated by <code>scripts/generate_data.py</code> in each project — so the repo is fully reproducible without proprietary data. Schemas, distributions, and seasonality patterns mirror real e-commerce, SaaS, and fulfillment workloads. Random seeds are pinned, so re-running the pipeline produces identical output.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    Built as a portfolio for Data / BI Analyst applications &middot;
+    <a href="https://github.com/angelafoua/data-analytics-portfolio" target="_blank" rel="noopener">View source on GitHub</a>
+  </footer>
+
+</body>
+</html>
