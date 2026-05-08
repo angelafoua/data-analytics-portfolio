@@ -1,0 +1,21 @@
+product_id,product_name,category,unit_cost,unit_price
+P1001,Laptop,Electronics,610.19,1109.44
+P1002,Smartphone,Electronics,76.41,138.93
+P1003,Headphones,Electronics,208.57,379.22
+P1004,Tablet,Electronics,732.12,1331.12
+P1005,Smartwatch,Electronics,480.61,873.84
+P1006,Coffee Maker,Home & Kitchen,48.92,88.95
+P1007,Blender,Home & Kitchen,584.26,1062.3
+P1008,Air Fryer,Home & Kitchen,423.44,769.89
+P1009,Vacuum,Home & Kitchen,706.58,1284.69
+P1010,T-Shirt,Apparel,566.5,1030.0
+P1011,Jeans,Apparel,14.62,26.58
+P1012,Sneakers,Apparel,178.47,324.49
+P1013,Jacket,Apparel,220.98,401.79
+P1014,Yoga Mat,Sports,582.62,1059.3
+P1015,Dumbbells,Sports,425.58,773.78
+P1016,Bicycle,Sports,619.42,1126.22
+P1017,Running Shoes,Sports,428.47,779.04
+P1018,Perfume,Beauty,277.49,504.53
+P1019,Skincare Set,Beauty,95.38,173.42
+P1020,Hair Dryer,Beauty,175.93,319.88
